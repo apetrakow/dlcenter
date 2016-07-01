@@ -17,7 +17,14 @@ router.get('/', function(req, res, next) {
     fs.readdir(settings.filesdir, function (err, files) {
         if(err) throw new Error(err);
         
-        content.files = files;
+        var cleaned = [];
+        files.forEach(function(filename) {
+            if( ! /^\..*/.test(filename)) {
+                cleaned.push(filename);
+            }
+        });
+        
+        content.files = cleaned;
         
         res.render("index", content);
         
