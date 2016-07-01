@@ -1,0 +1,16 @@
+doctype html
+html(lang="de")
+    head
+        title=pageTitle
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .jumbotron
+            .container.text-center
+                h1= title
+        .container
+            .row
+                .col-xs-6.col-xs-offset-3
+                    ul.list-group
+                        for file in files
+                            li.list-group-item
+                                a(href="/download/" + file, target="_blank", class="btn btn-warning") <span class="glyphicon glyphicon-file"></span> #{file}
