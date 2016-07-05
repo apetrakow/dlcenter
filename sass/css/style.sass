@@ -1,4 +1,16 @@
 
-$body-bg:     #e5ffe3
+$brand-primary: #e5ffe3
+
+$body-bg: $brand-primary
+
+$jumbotron-bg: $brand-primary
+$jumbotron-color: #fff
 
 @import "bootstrap"
+
+.jumbotron h1 
+    text-shadow: 0 0 4px rgb(0, 0, 0)
+    
+.jumbotron 
+    border-bottom: 1px solid darken($brand-primary, 5%)
+    @include box-shadow(0 2px 4px rgba(0, 0, 0, .25)

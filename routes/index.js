@@ -4,12 +4,12 @@ var fs = require("fs");
 var p = require("path");
 var settings = require("../config").settings;
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
-  //res.render('index', { title: 'Express' });
+    
     var content = {
         pageTitle : "DL Center Main",
-        title : "DL Dir",
+        title : settings.title,
         files : [],
         path : p.normalize(settings.filesdir)
     };
@@ -29,7 +29,6 @@ router.get('/', function(req, res, next) {
         res.render("index", content);
         
     });
-    
     
 });
 
