@@ -7,6 +7,8 @@ module.exports.settings = {
     },
 
     filesdir : "/var/www/download",
-    dlpath : "/download/"
+    dlpath : "/download/",
+    
+    title : "DL Dir"
 
 };
