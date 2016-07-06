@@ -27,8 +27,7 @@ app.use(require('node-sass-middleware')({
     src: path.join(__dirname, 'sass'),
     dest: path.join(__dirname, 'public'),
     indentedSyntax: true,
-    sourceMap: false,
-    debug: true
+    sourceMap: true
 }));
 
 // configure the routes
