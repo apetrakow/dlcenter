@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require("fs");
 var p = require("path");
+var mime = require("mime");
 var settings = require("../config").settings;
 
 
@@ -20,7 +21,10 @@ router.get('/', function(req, res, next) {
         var cleaned = [];
         files.forEach(function(filename) {
             if( ! /^\..*/.test(filename)) {
-                cleaned.push(filename);
+                cleaned.push({
+                    name: filename,
+                    type: mime.lookup(settings.filesdir + filename)
+                });
             }
         });
         
